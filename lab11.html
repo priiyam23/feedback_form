@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey and Feedback Form</title>
+  <style>
+    /* ---- Page styling ---- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* ---- Form container ---- */
+    .survey-form {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      width: 400px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .survey-form:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d3436;
+    }
+
+    /* ---- Form fields ---- */
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+      color: #2d3436;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid #b2bec3;
+      border-radius: 8px;
+      margin-top: 5px;
+      transition: border 0.3s, transform 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #0984e3;
+      transform: scale(1.02);
+      outline: none;
+    }
+
+    /* ---- Rating Section ---- */
+    .rating {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px 0;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 25px;
+      color: #b2bec3;
+      cursor: pointer;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .rating label:hover,
+    .rating input:checked ~ label {
+      color: gold;
+      transform: scale(1.2);
+    }
+
+    /* ---- Submit button ---- */
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      border: none;
+      background-color: #0984e3;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #74b9ff;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <form class="survey-form">
+    <h2>User Feedback Form</h2>
+
+    <!-- User Information -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" min="10" max="100" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <!-- Rating Section -->
+    <label>Rate your overall experience:</label>
+    <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1">★</label>
+    </div>
+
+    <!-- Feedback Section -->
+    <label for="feedback">Share your experience:</label>
+    <textarea id="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+</body>
+</html>
